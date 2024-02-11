@@ -33,7 +33,8 @@ while True:
                 banner = meusocket.recv(1024)
                 print("Porta {} Aberta - BANNER: {}".format(portas, banner.decode('utf-8')))
             except (socket.timeout, ConnectionRefusedError):
-                print('Porta {} Fechada'.format(portas))
+                continue
+                #print('Porta {} Fechada'.format(portas))
             finally:
                 meusocket.close()
 
